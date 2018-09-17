@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import Img from '../../atoms/Img';
 import Link from '../../atoms/Link';
+import Text from '../../atoms/Text';
+import TextGroup from '../../atoms/TextGroup'
 import Title from '../../atoms/Title';
 import './style.css';
 
@@ -14,15 +16,22 @@ export default class Members extends Component {
           <Title text='Members' className='Subtitle'/>
           <Link text='See All' className='SeeAll'/>
           
-          <div id="Members-Body">
-            <p className='Members-ProfilePic'>
-              <img width={120} height={120} src="https://3ek9gx368g2n28ygtw3vknmg-wpengine.netdna-ssl.com/wp-content/uploads/sites/4/2015/10/placeholder-circle-1.png" alt="thumbnail" />
-            </p>
-            <div className='Members-Detail'>
-              <p className='Members-Type'>Organizer</p>
-              <span className='Members-Name'>Adhy Wiranata</span>
-              <span className='Members-Total'>4 others</span>
-            </div>
+          <div className="Members-Body">
+            <Img
+              width= '120px'
+              height= '120px'
+              src={this.props.icon}
+              alt={this.props.alt}
+              className= 'ProfilePic'
+            />
+            <TextGroup className='Members-Detail'>
+              <Text content = {this.props.type} className='Members-Type'/>
+              <div className = 'Members-Summary'>
+                <Text content = {this.props.name} className='Members-Name'/>
+                <Text content = {this.props.length} className='Members-Total'/>
+                <Text content = {this.props.length < 2 ? 'other.' : 'others.'}/>
+              </div>
+            </TextGroup>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Link from '../../atoms/Link';
 import TextGroup from '../../atoms/TextGroup';
 import './style.css';

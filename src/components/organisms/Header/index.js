@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Img from '../../atoms/Img';
 import MediaBody from '../../molecules/MediaBody';
 import './style.css';

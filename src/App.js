@@ -49,6 +49,26 @@ export default class App extends Component {
           name: 'Chandra Wiranata',
           memberType: 'Member'
         }
+      ],
+      schedule: [
+        {
+          id: 39,
+          date: '27 November 2017',
+          topic: 'JakartaJS with Kumparan',
+          participants: 139
+        },
+        {
+          id: 40,
+          date: '27 September 2017',
+          topic: 'JakartaJS with Blibli',
+          participants: 239
+        },
+        {
+          id: 41,
+          date: '27 October 2017',
+          topic: 'JakartaJS with Hacktiv8',
+          participants: 39
+        }
       ]
     };
   };
@@ -76,10 +96,29 @@ export default class App extends Component {
           hashtag = {this.state.profile.hashtag}
         />
         <Members
+          icon = {this.state.member[0].imageProfile}
+          name = {this.state.member[0].name}
+          type = {this.state.member[0].memberType}
+          length = {this.state.member.length}
         />
-        <PastMeetup/>
+        <PastMeetup
+          id = {this.state.schedule[0].id}
+          date = {this.state.schedule[0].date}
+          topic = {this.state.schedule[0].topic}
+          participants = {this.state.schedule[0].participants}
+
+          id1 = {this.state.schedule[1].id}
+          date1 = {this.state.schedule[1].date}
+          topic1 = {this.state.schedule[1].topic}
+          participants1 = {this.state.schedule[1].participants}
+
+          id2 = {this.state.schedule[2].id}
+          date2 = {this.state.schedule[2].date}
+          topic2 = {this.state.schedule[2].topic}
+          participants2 = {this.state.schedule[2].participants}
+        />
         <Footer/>
       </div>
-    );
+    )
   }
 }
