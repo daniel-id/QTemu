@@ -5,7 +5,7 @@ export default class Link extends Component {
 
   render() {
     return (
-      <a className={this.props.className}>{this.props.text}</a>
+      <a onClick={this.props.onClick} className={this.props.className}>{this.props.text}</a>
     );
   }
 }

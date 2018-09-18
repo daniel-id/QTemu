@@ -68,6 +68,24 @@ export default class App extends Component {
           date: '27 October 2017',
           topic: 'JakartaJS with Hacktiv8',
           participants: 39
+        },
+        {
+          id: 39,
+          date: '27 November 2017',
+          topic: 'JakartaJS with Kumparan',
+          participants: 139
+        },
+        {
+          id: 40,
+          date: '27 September 2017',
+          topic: 'JakartaJS with Blibli',
+          participants: 239
+        },
+        {
+          id: 41,
+          date: '27 October 2017',
+          topic: 'JakartaJS with Hacktiv8',
+          participants: 39
         }
       ]
     };
