@@ -9,23 +9,23 @@ export default class MediaBody extends Component {
     return(
       <TextGroup className='DataSet'>
         <Text content={this.props.title} className='DataTitle'/>
-        <div className='DataDetail'>
-          <div className='space25px'>
+        <TextGroup className='DataDetail'>
+          <TextGroup className='space25px'>
             <Text content='Location'/>
             <Text content='Members'/>
             <Text content='Organizer'/>
-          </div>
-          <div className='space25px'>
+          </TextGroup>
+          <TextGroup className='space25px'>
             <Text content=':'/>
             <Text content=':'/>
             <Text content=':'/>
-          </div>
-          <div>
+          </TextGroup>
+          <TextGroup>
             <Text content={this.props.location}/>
             <Text content={this.props.totalMembers}/>
             <Text content={this.props.organizer}/>
-          </div>
-        </div>
+          </TextGroup>
+        </TextGroup>
         <button className='Join'>Join Us</button>
       </TextGroup>
     )
