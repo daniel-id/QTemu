@@ -7,15 +7,19 @@ import TextGroup from '../../atoms/TextGroup';
 
 export default class PastMeetup extends Component {
   constructor() {
+    super();
+
     this.state = {
       isOpened: false
     }
   }
-  
+
   renderSeeAll() {
+    console.log('seeall');
     return this.props.schedule.map((eachSchedule, index) => {
       return (
-       <Card 
+       <Card
+          key = {index}
           date = {eachSchedule.date}
           id = {eachSchedule.id}
           topic = {eachSchedule.topic}
@@ -24,12 +28,12 @@ export default class PastMeetup extends Component {
       )
     })
   }
-  
+
   renderCard() {
     return this.props.schedule.map((eachSchedule, index) => {
       if (index <= 2) {
         return (
-         <Card 
+         <Card
             date = {eachSchedule.date}
             id = {eachSchedule.id}
             topic = {eachSchedule.topic}
@@ -39,21 +43,22 @@ export default class PastMeetup extends Component {
       }
     })
   }
-  
+
   renderContent() {
     if (this.state.isOpened) {
-      this.renderSeeAll();
+      return this.renderSeeAll();
     } else {
-      this.renderCard();
+      return this.renderCard();
     }
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <TextGroup className="PastMeetup">
           <Title text='Past Meetup' className='Subtitle'/>
-          <Link text='See All' className='SeeAll' onClick={() => this.setState({isOpenend: true})}/>
+          <Link text='See All' className='SeeAll' onClick={() => this.setState({isOpened: true})}/>
 
           <div className = 'CardGroup'>
            {this.renderContent()}
