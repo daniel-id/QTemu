@@ -102,20 +102,7 @@ export default class App extends Component {
           length = {this.state.member.length}
         />
         <PastMeetup
-          id = {this.state.schedule[0].id}
-          date = {this.state.schedule[0].date}
-          topic = {this.state.schedule[0].topic}
-          participants = {this.state.schedule[0].participants}
-
-          id1 = {this.state.schedule[1].id}
-          date1 = {this.state.schedule[1].date}
-          topic1 = {this.state.schedule[1].topic}
-          participants1 = {this.state.schedule[1].participants}
-
-          id2 = {this.state.schedule[2].id}
-          date2 = {this.state.schedule[2].date}
-          topic2 = {this.state.schedule[2].topic}
-          participants2 = {this.state.schedule[2].participants}
+          schedule = {this.state.schedule}
         />
         <Footer/>
       </div>
