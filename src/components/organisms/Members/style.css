@@ -14,6 +14,7 @@
 
 .ProfilePic {
   margin: 30px 15px;
+  border-radius: 50%;
 }
 
 .Members-Detail {

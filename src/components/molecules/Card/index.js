@@ -7,8 +7,8 @@ export default class Card extends Component {
 
   render() {
     return (
-      <div>
-        <TextGroup className = 'CardItem'>
+      <div className = 'CardItem'>
+        <TextGroup>
           <Text content = {this.props.date} className = 'Subtitle bold'/>
           <hr /> 
           <div className = 'make-inline'>

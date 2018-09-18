@@ -7,22 +7,23 @@ import TextGroup from '../../atoms/TextGroup';
 
 export default class PastMeetup extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      isOpened: false
+      isOpened: props.isOpened ? props.isOpened : false,
     }
   }
 
   renderSeeAll() {
     return this.props.schedule.map((eachSchedule, index) => {
       return (
-       <Card 
+        <Card
+          key = {index} 
           date = {eachSchedule.date}
           id = {eachSchedule.id}
           topic = {eachSchedule.topic}
           participants = {eachSchedule.participants}
-       />
+        />
       )
     })
   }
@@ -32,6 +33,7 @@ export default class PastMeetup extends Component {
       if (index <=2) {
         return (
           <Card
+            key = {index}
             date = {eachSchedule.date}
             id = {eachSchedule.id}
             topic = {eachSchedule.topic}

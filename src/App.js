@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import NavbarQTemu from './components/organisms/NavbarQTemu';
 import Header from './components/organisms/Header';
 import NextMeetup from './components/organisms/NextMeetup';
@@ -87,8 +88,20 @@ export default class App extends Component {
           topic: 'JakartaJS with Hacktiv8',
           participants: 39
         }
-      ]
+      ],
+      members: []
     };
+  };
+
+  componentDidMount() {
+    axios
+      .get("https://randomuser.me/api/?results=10&gender=female")
+      .then(response => {
+        this.setState({
+          members: response.data.results,
+        })
+      }
+    );
   };
 
   render() {
@@ -114,12 +127,11 @@ export default class App extends Component {
           hashtag = {this.state.profile.hashtag}
         />
         <Members
-          icon = {this.state.member[0].imageProfile}
-          name = {this.state.member[0].name}
-          type = {this.state.member[0].memberType}
+          members = {this.state.members}
           length = {this.state.member.length}
         />
         <PastMeetup
+          isOpened = {this.state}
           schedule = {this.state.schedule}
         />
         <Footer/>
