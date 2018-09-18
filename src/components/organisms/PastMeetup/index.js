@@ -6,33 +6,57 @@ import './style.css';
 import TextGroup from '../../atoms/TextGroup';
 
 export default class PastMeetup extends Component {
+  constructor() {
+    this.state = {
+      isOpened: false
+    }
+  }
+  
+  renderSeeAll() {
+    return this.props.schedule.map((eachSchedule, index) => {
+      return (
+       <Card 
+          date = {eachSchedule.date}
+          id = {eachSchedule.id}
+          topic = {eachSchedule.topic}
+          participants = {eachSchedule.participants}
+       />
+      )
+    })
+  }
+  
+  renderCard() {
+    return this.props.schedule.map((eachSchedule, index) => {
+      if (index <= 2) {
+        return (
+         <Card 
+            date = {eachSchedule.date}
+            id = {eachSchedule.id}
+            topic = {eachSchedule.topic}
+            participants = {eachSchedule.participants}
+         />
+        )
+      }
+    })
+  }
+  
+  renderContent() {
+    if (this.state.isOpened) {
+      this.renderSeeAll();
+    } else {
+      this.renderCard();
+    }
+  }
 
   render() {
     return (
       <div>
         <TextGroup className="PastMeetup">
           <Title text='Past Meetup' className='Subtitle'/>
-          <Link text='See All' className='SeeAll'/>
+          <Link text='See All' className='SeeAll' onClick={() => this.setState({isOpenend: true})}/>
 
           <div className = 'CardGroup'>
-            <Card 
-              date = {this.props.date}
-              id = {this.props.id}
-              topic = {this.props.topic}
-              participants = {this.props.participants}
-            />
-            <Card 
-              date = {this.props.date1}
-              id = {this.props.id1}
-              topic = {this.props.topic1}
-              participants = {this.props.participants1}
-            />
-            <Card 
-              date = {this.props.date2}
-              id = {this.props.id2}
-              topic = {this.props.topic2}
-              participants = {this.props.participants2}
-            />
+           {this.renderContent()}
           </div>
         </TextGroup>
       </div>
