@@ -131,7 +131,6 @@ export default class App extends Component {
           length = {this.state.member.length}
         />
         <PastMeetup
-          isOpened = {this.state}
           schedule = {this.state.schedule}
         />
         <Footer/>

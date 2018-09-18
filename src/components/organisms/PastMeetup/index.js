@@ -6,11 +6,11 @@ import './style.css';
 import TextGroup from '../../atoms/TextGroup';
 
 export default class PastMeetup extends Component {
+  constructor() {
+    super();
 
-  constructor(props) {
-    super(props)
     this.state = {
-      isOpened: props.isOpened ? props.isOpened : false,
+      isOpened: false
     }
   }
 
@@ -53,6 +53,7 @@ export default class PastMeetup extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <TextGroup className="PastMeetup">
