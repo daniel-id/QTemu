@@ -53,7 +53,7 @@ export default class PastMeetup extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div>
         <TextGroup className="PastMeetup">

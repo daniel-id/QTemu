@@ -15,17 +15,17 @@ export default class Members extends Component {
           <Img
             width= '120px'
             height= '120px'
-            src={eachMember.picture.thumbnail}
+            src={eachMember.picture.large}
             alt={'icon'}
             className= 'ProfilePic'
           />
           <TextGroup className='Members-Detail'>
             <Text content = {eachMember.email} className='Members-Type'/>
-            <div className = 'Members-Summary'>
+            <TextGroup className = 'Members-Summary'>
               <Text content = {`${eachMember.name.first} ${eachMember.name.last}`} className='Members-Name'/>
-              <Text content = {this.props.length} className='Members-Total'/>
-              <Text content = {this.props.length < 2 ? 'other.' : 'others.'}/>
-            </div>
+              <Text content = {eachMember.dob.age} className='Members-Total'/>
+              <Text content = {eachMember.dob.age < 2 ? 'year old.' : 'years old.'}/>
+            </TextGroup>
           </TextGroup>
         </div>
       )
